@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#082e2b">
+<meta name="description" content="Beyond The Streets brings people, communities and partners together to advance dignity, belonging and opportunity.">
+<title>Beyond The Streets — Human Potential. Shared Progress.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#082e2b;--forest2:#0d4039;--teal:#14745f;--mint:#dcece4;
+  --gold:#e6b45c;--cream:#f6f5ef;--ink:#15312c;--muted:#1e2221;
+  --white:#fff;--line:rgba(8,46,43,.12);--heading:'Manrope',sans-serif;
+  --body:'DM Sans',sans-serif;--max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.7}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{width:min(var(--max),88%);margin:auto}
+.kicker{display:flex;align-items:center;gap:12px;color:var(--teal);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.kicker:before{content:"";width:30px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--heading);line-height:1.13;letter-spacing:-.045em}
+h2{font-size:clamp(2.15rem,4.2vw,3.8rem);color:var(--forest)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:14px 22px;border-radius:999px;font-size:.86rem;font-weight:700;transition:.25s}
+.btn-gold{background:var(--gold);color:var(--forest)}
+.btn-gold:hover{background:#f1c979;transform:translateY(-3px)}
+.btn-ghost{border:1px solid rgba(255,255,255,.5);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--forest)}
+/* Header */
+header{position:absolute;inset:0 0 auto;z-index:20;color:#fff}
+.nav{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.16)}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--heading);font-size:.92rem;font-weight:800;letter-spacing:.015em}
+.brand img{width:48px;height:48px;object-fit:contain}
+.brand span{color:var(--gold)}
+.navlinks{display:flex;align-items:center;gap:30px;font-size:.82rem;font-weight:600;color:#edf4f0}
+.navlinks a:not(.nav-cta):hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--forest);padding:11px 19px;border-radius:30px}
+.menu{display:none;background:transparent;color:white;border:1px solid #ffffff70;border-radius:8px;padding:8px 12px;font-size:1.2rem}
+/* Hero */
+.hero{min-height:790px;display:flex;align-items:center;position:relative;color:white;isolation:isolate;
+ background:linear-gradient(90deg,rgba(3,29,26,.94) 0%,rgba(3,35,31,.78) 48%,rgba(3,35,31,.24) 100%),
+ linear-gradient(0deg,rgba(3,29,26,.42),transparent 60%),
+ url("images/uhurupark.jpg") center 42%/cover no-repeat,var(--forest)}
+.hero:after{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 78% 45%,transparent 0,rgba(3,29,26,.18) 62%)}
+.hero-content{padding:150px 0 85px;max-width:780px}
+.hero .kicker{color:var(--gold);margin-bottom:28px}
+.hero h1{font-size:clamp(3.5rem,7.6vw,7rem);max-width:850px;letter-spacing:-.065em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-copy{max-width:590px;color:#d6e3dd;font-size:1.05rem;line-height:1.9;margin:26px 0 32px}
+.actions{display:flex;flex-wrap:wrap;gap:13px}
+.hero-foot{margin-top:72px;display:flex;align-items:center;gap:14px;color:#d3e0da;font-size:.7rem;letter-spacing:.18em;font-weight:700}
+.hero-foot:before{content:"";width:38px;height:1px;background:var(--gold)}
+/* Intro */
+.intro{padding:120px 0;display:grid;grid-template-columns:1fr 1fr;gap:9%;align-items:center}
+.intro-copy .kicker,.section-head .kicker{margin-bottom:20px}
+.intro h2{margin-bottom:23px}
+.intro h2 span{color:var(--teal)}
+.intro p{color:var(--muted);font-size:.97rem;margin:0 0 16px;max-width:570px}
+.inline-link{display:inline-flex;gap:12px;color:var(--teal);font-weight:700;font-size:.86rem;margin-top:14px;border-bottom:1px solid var(--teal);padding-bottom:5px}
+.photo-stack{position:relative;padding:0 0 30px 30px}
+.photo-stack:before{content:"";position:absolute;left:0;bottom:0;width:62%;height:65%;background:var(--mint);z-index:-1}
+.photo-stack img{width:100%;height:510px;object-fit:cover;border-radius:4px}
+.photo-note{position:absolute;left:-10px;bottom:58px;background:var(--forest);color:white;padding:22px 25px;max-width:240px;border-left:3px solid var(--gold);font-family:var(--heading);font-size:1.08rem;line-height:1.45}
+/* Principle */
+.statement{background:var(--forest);color:#fff;padding:82px 0;position:relative;overflow:hidden}
+.statement:after{content:"";position:absolute;width:480px;height:480px;border:1px solid #ffffff12;border-radius:50%;right:-130px;top:-260px}
+.statement-inner{text-align:center;max-width:880px;position:relative;z-index:1}
+.statement .kicker{justify-content:center;color:var(--gold);margin-bottom:22px}
+.statement h2{color:#fff;font-size:clamp(2rem,4vw,3.5rem)}
+.statement h2 span{color:var(--gold)}
+.statement p{color:#c3d4cc;max-width:700px;margin:22px auto 0}
+/* Focus areas */
+.focus{padding:115px 0}
+.section-head{max-width:720px;margin-bottom:48px}
+.section-head p{color:var(--muted);max-width:650px;margin-top:18px}
+.focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.focus-card{background:#fff;border:1px solid #e7e9e2;padding:32px 29px 35px;min-height:260px;transition:.3s}
+.focus-card:hover{transform:translateY(-6px);box-shadow:0 20px 45px #082e2b12;border-color:#8ab9aa}
+.num{font-family:var(--heading);font-size:.75rem;color:var(--teal);letter-spacing:.12em}
+.focus-card h3{font-size:1.22rem;margin:22px 0 12px;color:var(--forest);letter-spacing:-.025em}
+.focus-card p{font-size:.88rem;color:var(--muted);line-height:1.8}
+/* Story feature */
+.feature{background:#e9eee7;padding:110px 0}
+.feature-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:7%;align-items:center}
+.feature-image{height:520px;overflow:hidden}
+.feature-image img{width:100%;height:100%;object-fit:cover}
+.feature-copy h2{margin:20px 0}
+.feature-copy p{color:var(--muted);margin-bottom:17px}
+.feature-points{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:28px}
+.feature-points div{border-top:1px solid #b9c9bf;padding-top:13px;font-size:.83rem;font-weight:700;color:var(--forest)}
+/* Community banner */
+.join{padding:115px 0;background:linear-gradient(90deg,#062923eF,#062923b8),url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;color:#fff;text-align:center}
+.join .kicker{justify-content:center;color:var(--gold)}
+.join h2{color:#fff;max-width:850px;margin:22px auto;font-size:clamp(2.4rem,5vw,4.6rem)}
+.join h2 span{color:var(--gold)}
+.join p{max-width:650px;margin:0 auto 30px;color:#d4e0da}
+/* Footer */
+footer{background:#041c1a;color:white;padding:72px 0 24px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px;padding-bottom:50px}
+.footer-about p{max-width:360px;color:#a9bbb2;font-size:.86rem;margin-top:20px}
+.footer-col h4{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.footer-col a{display:block;color:#b7c7bf;font-size:.84rem;margin:10px 0}
+.footer-col a:hover{color:white}
+.footer-bottom{border-top:1px solid #ffffff20;padding-top:20px;display:flex;justify-content:space-between;gap:20px;color:#8fa49a;font-size:.73rem}
+/* Motion */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+@media(max-width:850px){
+ .navlinks{gap:17px}.intro{gap:5%}.focus-grid{grid-template-columns:repeat(2,1fr)}
+ .feature-layout{gap:5%}.feature-image{height:440px}
+}
+@media(max-width:640px){
+ .container{width:90%}.nav{height:76px}.brand{font-size:.78rem}.brand img{width:40px;height:40px}
+ .menu{display:block}.navlinks{display:none;position:absolute;top:76px;left:5%;right:5%;padding:22px;background:var(--forest);border:1px solid #ffffff25;border-radius:12px;align-items:stretch;flex-direction:column;gap:18px}
+ .navlinks.open{display:flex}.nav-cta{text-align:center}
+ .hero{min-height:740px;background-position:58% center}.hero-content{padding:145px 0 65px}.hero h1{font-size:clamp(3.2rem,13vw,5rem)}
+ .hero-copy{font-size:.94rem}.hero-foot{margin-top:55px}
+ .intro{padding:78px 0;grid-template-columns:1fr;gap:45px}
+ .photo-stack{padding-left:15px}.photo-stack img{height:390px}.photo-note{left:0;bottom:48px}
+ .statement{padding:70px 0}.focus,.feature,.join{padding:78px 0}
+ .focus-grid{grid-template-columns:1fr}.focus-card{min-height:0}
+ .feature-layout{grid-template-columns:1fr;gap:35px}.feature-image{height:380px}
+ .feature-points{gap:12px}.footer-grid{grid-template-columns:1fr;gap:35px}
+ .footer-bottom{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="Beyond The Streets home">
+      <img src="images/Beyondthestreets.png" alt="">
+      <span>B <span>T S</span></span>
+    </a>
+    <button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+      <a href="#about">Our Story</a><a href="#focus">What We Do</a>
+      <a href="#stories">Our Approach</a><a href="#contact">Contact</a>
+      <a class="nav-cta" href="#join">Be Part of It ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="kicker">A movement for humanity, connection & purpose</div>
+      <h1>See the person.<br><em>beyond their circumstances.</em></h1>
+      <p class="hero-copy">Beyond The Streets brings people, communities and stakeholders together to recognise human potential, amplify lived experience and create pathways to meaningful impact.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#about">Discover the movement <span>→</span></a>
+        <a class="btn btn-ghost" href="#join">Work with us</a>
+      </div>
+      <div class="hero-foot">HUMAN DIGNITY · SHARED PROGRESS · REAL IMPACT</div>
+    </div>
+  </div>
+</section>
+
+<section class="container intro reveal" id="about">
+  <div class="intro-copy">
+    <div class="kicker">Who we are</div>
+    <h2>People are more than the labels <span>placed on them.</span></h2>
+    <p>We believe every person brings a story, a perspective and the potential to contribute. Yet too often, public perception is shaped by circumstance rather than by the whole person.</p>
+    <p>Beyond The Streets is a platform for connection and practical collaboration. We work alongside people with lived experience and communities to shape responses that are respectful, relevant and rooted in real life.</p>
+    <a class="inline-link" href="#focus">Explore our approach <span>→</span></a>
+  </div>
+  <div class="photo-stack">
+    <img src="images/streets.jpg" alt="Community members meeting and working together">
+    <div class="photo-note">Different journeys.<br>Shared humanity.</div>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="container statement-inner reveal">
+    <div class="kicker">What we believe</div>
+    <h2>A person's circumstances are part of their story — <span>never the whole story.</span></h2>
+    <p>We want communities where people are recognised for their abilities, included in decisions and connected to opportunities to shape their own futures.</p>
+  </div>
+</section>
+
+<section class="focus container" id="focus">
+  <div class="section-head reveal">
+    <div class="kicker">Our areas of focus</div>
+    <h2>Turning shared understanding into shared action.</h2>
+    <p>We connect stories, community knowledge and practical partnerships. Our work is designed with people, not simply for them.</p>
+  </div>
+  <div class="focus-grid">
+    <article class="focus-card reveal"><div class="num">01 / VOICE</div><h3>Lived Experience & Storytelling</h3><p>Creating thoughtful platforms for people to share their experiences, ideas and aspirations in their own voices.</p></article>
+    <article class="focus-card reveal"><div class="num">02 / CONNECTION</div><h3>Community & Belonging</h3><p>Building relationships across neighbourhoods, generations and organisations, grounded in trust and mutual respect.</p></article>
+    <article class="focus-card reveal"><div class="num">03 / OPPORTUNITY</div><h3>Skills & Pathways</h3><p>Connecting people with learning, mentorship, work exposure and enterprise networks through capable partners.</p></article>
+    <article class="focus-card reveal"><div class="num">04 / CULTURE</div><h3>Public Understanding</h3><p>Shifting perceptions through honest storytelling, dialogue and a fuller understanding of street-connected experiences.</p></article>
+    <article class="focus-card reveal"><div class="num">05 / COLLABORATION</div><h3>Partnerships for Progress</h3><p>Bringing community groups, institutions, creatives and businesses together around practical shared goals.</p></article>
+    <article class="focus-card reveal"><div class="num">06 / POSSIBILITY</div><h3>Recognising Human Potential</h3><p>Making space for talent, creativity, knowledge and leadership to be recognised and put into action.</p></article>
+  </div>
+</section>
+
+<section class="feature" id="stories">
+  <div class="container feature-layout">
+    <div class="feature-image reveal">
+      <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=85" alt="Young adults sharing ideas in a group discussion">
+    </div>
+    <div class="feature-copy reveal">
+      <div class="kicker">Our approach</div>
+      <h2>Listen first.<br>Build together.</h2>
+      <p>Lasting progress starts with understanding what people say they need, what they already know and what they want to build. We make lived experience central to the conversations and decisions that affect people.</p>
+      <p>From community dialogues to storytelling and opportunity partnerships, we aim to turn listening into thoughtful, practical next steps.</p>
+      <div class="feature-points">
+        <div>Community-led insight</div><div>Respectful storytelling</div>
+        <div>Practical partnerships</div><div>Learning and accountability</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="container reveal">
+    <div class="kicker">A shared movement</div>
+    <h2>There is a place for you in <span>what comes next.</span></h2>
+    <p>Bring your experience, skills, ideas or organisation. Together, we can grow a movement shaped by dignity, participation and possibility.</p>
+    <a class="btn btn-gold" href="mailto:hello@beyondthestreets.org">Start a conversation ↗</a>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="#home"><img src="beyond-the-streets-logo.png" alt=""><span>BEYOND <span>THE STREETS</span></span></a>
+        <p>A movement advancing human dignity, community connection and opportunity — shaped by the voices and leadership of people with lived experience.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="#about">Our Story</a><a href="#focus">What We Do</a><a href="#stories">Our Approach</a></div>
+      <div class="footer-col"><h4>Connect</h4><a href="mailto:hello@beyondthestreets.org">Email the team</a><a href="#join">Partnerships</a><a href="#join">Get involved</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Beyond The Streets. All rights reserved.</span><span>Human potential. Shared progress.</span></div>
+  </div>
+</footer>
+
+<script>
+const menu = document.getElementById('menu');
+const nav = document.getElementById('navlinks');
+menu.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menu.setAttribute('aria-expanded', String(open));
+  menu.textContent = open ? '×' : '☰';
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open');
+  menu.setAttribute('aria-expanded','false');
+  menu.textContent = '☰';
+}));
+document.getElementById('year').textContent = new Date().getFullYear();
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); }
+  }), {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+}
+</script>
+</body>
+</html>
