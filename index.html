@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,6 +130,288 @@ footer{background:#041c1a;color:white;padding:72px 0 24px}
  .feature-points{gap:12px}.footer-grid{grid-template-columns:1fr;gap:35px}
  .footer-bottom{flex-direction:column}
 }
+
+
+cus {
+  --bts-green: #092f2b;
+  --bts-teal: #159b87;
+  --bts-gold: #e8a83e;
+  background: #071f1e;
+  color: #fff;
+  padding: 105px 0;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.bts-focus-inner {
+  width: min(1180px, 90%);
+  margin: auto;
+}
+
+.bts-focus-heading {
+  max-width: 720px;
+  margin-bottom: 45px;
+}
+
+.bts-kicker {
+  display: inline-block;
+  color: var(--bts-gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.bts-focus-heading h2 {
+  font-size: clamp(32px, 5vw, 55px);
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -1.8px;
+  margin: 0 0 18px;
+}
+
+.bts-focus-heading p {
+  color: rgba(255,255,255,.67);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 620px;
+  margin: 0;
+}
+
+.bts-carousel {
+  position: relative;
+  border-radius: 17px;
+  overflow: hidden;
+  background: #102b29;
+  box-shadow: 0 25px 80px rgba(0,0,0,.3);
+}
+
+.bts-track {
+  position: relative;
+  height: 590px;
+}
+
+.bts-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .9s ease, visibility .9s;
+  overflow: hidden;
+}
+
+.bts-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.bts-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.08);
+  transition: transform 7s cubic-bezier(.2,.7,.2,1);
+}
+
+.bts-slide.active img {
+  transform: scale(1);
+}
+
+.bts-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(4,24,22,.94) 0%,
+    rgba(4,24,22,.76) 36%,
+    rgba(4,24,22,.23) 75%,
+    rgba(4,24,22,.08) 100%
+  ),
+  linear-gradient(0deg, rgba(4,24,22,.5), transparent 55%);
+}
+
+.bts-slide-content {
+  color: #fff;
+  position: absolute;
+  left: clamp(30px, 7%, 85px);
+  bottom: 100px;
+  max-width: 570px;
+  z-index: 3;
+}
+
+.bts-number {
+  display: inline-block;
+  color: var(--bts-gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.bts-slide-content h3 {
+  color: #fff;
+  visibility: visible;
+  font-size: clamp(34px, 5vw, 57px);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  margin: 0 0 20px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all .7s ease .2s;
+}
+
+.bts-slide-content p {
+  color: rgba(255,255,255,.83);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 470px;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .7s ease .35s;
+}
+
+.bts-slide.active .bts-slide-content h3,
+.bts-slide.active .bts-slide-content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation */
+.bts-controls {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px clamp(25px, 6%, 75px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(0deg, rgba(3,20,18,.85), transparent);
+}
+
+.bts-progress {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.bts-current {
+  color: var(--bts-gold);
+}
+
+.bts-total {
+  color: rgba(255,255,255,.55);
+}
+
+.bts-progress-line {
+  width: 110px;
+  height: 2px;
+  background: rgba(255,255,255,.25);
+  overflow: hidden;
+}
+
+.bts-progress-fill {
+  display: block;
+  height: 100%;
+  width: 16.666%;
+  background: var(--bts-gold);
+  transition: width .6s ease;
+}
+
+.bts-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.bts-arrows button {
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 50%;
+  color: white;
+  background: rgba(255,255,255,.07);
+  font-size: 20px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.bts-arrows button:hover {
+  background: var(--bts-teal);
+  border-color: var(--bts-teal);
+  transform: translateY(-2px);
+}
+
+@media(max-width: 700px) {
+  .bts-focus {
+    padding: 70px 0;
+  }
+
+  .bts-focus-heading {
+    margin-bottom: 30px;
+  }
+
+  .bts-track {
+    height: 510px;
+  }
+
+  .bts-slide-content {
+  color: #fff;
+    left: 25px;
+    right: 25px;
+    bottom: 105px;
+  }
+
+  .bts-slide-content h3 {
+  color: #fff;
+  visibility: visible;
+    font-size: 37px;
+  }
+
+  .bts-slide-content p {
+    font-size: 14px;
+  }
+
+  .bts-shade {
+    background: linear-gradient(
+      0deg,
+      rgba(4,24,22,.97) 0%,
+      rgba(4,24,22,.72) 48%,
+      rgba(4,24,22,.12) 100%
+    );
+  }
+
+  .bts-controls {
+    padding: 20px;
+  }
+
+  .bts-progress-line {
+    width: 65px;
+  }
+
+  .bts-arrows button {
+    width: 39px;
+    height: 39px;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  .bts-slide,
+  .bts-slide img,
+  .bts-slide-content h3,
+  .bts-slide-content p,
+  .bts-progress-fill {
+    transition: none !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -185,26 +468,117 @@ footer{background:#041c1a;color:white;padding:72px 0 24px}
   </div>
 </section>
 
-<section class="focus container" id="focus">
-  <div class="section-head reveal">
-    <div class="kicker">Our areas of focus</div>
-    <h2>Turning shared understanding into shared action.</h2>
-    <p>We connect stories, community knowledge and practical partnerships. Our work is designed with people, not simply for them.</p>
-  </div>
-  <div class="focus-grid">
-    <article class="focus-card reveal"><div class="num">01 / VOICE</div><h3>Lived Experience & Storytelling</h3><p>Creating thoughtful platforms for people to share their experiences, ideas and aspirations in their own voices.</p></article>
-    <article class="focus-card reveal"><div class="num">02 / CONNECTION</div><h3>Community & Belonging</h3><p>Building relationships across neighbourhoods, generations and organisations, grounded in trust and mutual respect.</p></article>
-    <article class="focus-card reveal"><div class="num">03 / OPPORTUNITY</div><h3>Skills & Pathways</h3><p>Connecting people with learning, mentorship, work exposure and enterprise networks through capable partners.</p></article>
-    <article class="focus-card reveal"><div class="num">04 / CULTURE</div><h3>Public Understanding</h3><p>Shifting perceptions through honest storytelling, dialogue and a fuller understanding of street-connected experiences.</p></article>
-    <article class="focus-card reveal"><div class="num">05 / COLLABORATION</div><h3>Partnerships for Progress</h3><p>Bringing community groups, institutions, creatives and businesses together around practical shared goals.</p></article>
-    <article class="focus-card reveal"><div class="num">06 / POSSIBILITY</div><h3>Recognising Human Potential</h3><p>Making space for talent, creativity, knowledge and leadership to be recognised and put into action.</p></article>
+
+<section class="bts-focus" id="focus">
+  <div class="bts-focus-inner">
+
+    <div class="bts-focus-heading">
+      <span class="bts-kicker">OUR AREAS OF FOCUS</span>
+      <h2>Turning shared understanding<br>into shared action.</h2>
+      <p>We connect stories, community knowledge and practical partnerships. Our work is designed with people, not simply for them.</p>
+    </div>
+
+    <div class="bts-carousel" aria-label="Our areas of focus">
+
+      <div class="bts-track">
+
+        <!-- 01: VOICE -->
+        <article class="bts-slide active">
+          <img src="https://npr.brightspotcdn.com/dims4/default/86ff0e3/2147483647/strip/true/crop/2248x1500%2B0%2B0/resize/880x587%21/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F7b%2F17%2Fa977edfa487aa09e36f765440e33%2Felpg6irwkaa6rra.jpg"
+               alt="Young musicians in a Nairobi community">
+          <div class="bts-shade"></div>
+          <div class="bts-slide-content">
+            <span class="bts-number">01 / VOICE</span>
+            <h3>Lived Experience &amp;<br>Storytelling</h3>
+            <p>Creating thoughtful platforms for people to share their experiences, ideas and aspirations in their own voices.</p>
+          </div>
+        </article>
+
+        <!-- 02: CONNECTION -->
+        <article class="bts-slide">
+          <img src="https://bilder.deutschlandfunk.de/FI/LE/_8/dd/FILE_8dd6263b64f118a5dc72e1adf140efc0/nairobi-jugendliche-jpg-100-1920x1080.jpg"
+               alt="Young people connecting in Nairobi">
+          <div class="bts-shade"></div>
+          <div class="bts-slide-content">
+            <span class="bts-number">02 / CONNECTION</span>
+            <h3>Community &amp;<br>Belonging</h3>
+            <p>Building relationships across neighbourhoods, generations and organisations, grounded in trust and mutual respect.</p>
+          </div>
+        </article>
+
+        <!-- 03: OPPORTUNITY -->
+        <article class="bts-slide">
+          <img src="https://images.ctfassets.net/vhuig2q39rwx/37mGIN4HqF9JFTyXe3ODaH/14e9c6cb4044af435518aa0579cc78f1/AFMAC_Nairobi_2025-22_copy.jpeg?fl=progressive&fm=jpg&h=1120&q=80&w=1680"
+               alt="Young Nairobi street performers">
+          <div class="bts-shade"></div>
+          <div class="bts-slide-content">
+            <span class="bts-number">03 / OPPORTUNITY</span>
+            <h3>Skills &amp;<br>Pathways</h3>
+            <p>Connecting people with learning, mentorship, work exposure and enterprise networks through capable partners.</p>
+          </div>
+        </article>
+
+        <!-- 04: CULTURE -->
+        <article class="bts-slide">
+          <img src="https://toybox.org.uk/img/containers/assets/assets/stories/tumo-taking-photos-2.jpg/c93b5be8ae08f922d84c7e4f4bdc0ad4.jpg"
+               alt="Young people documenting their community">
+          <div class="bts-shade"></div>
+          <div class="bts-slide-content">
+            <span class="bts-number">04 / CULTURE</span>
+            <h3>Public<br>Understanding</h3>
+            <p>Shifting perceptions through honest storytelling, dialogue and a fuller understanding of street-connected experiences.</p>
+          </div>
+        </article>
+
+        <!-- 05: COLLABORATION -->
+        <article class="bts-slide">
+          <img src="https://images.unsplash.com/photo-1547496614-54ff387d650a?auto=format&fit=crop&w=1800&q=85"
+               alt="Everyday community life in Nairobi">
+          <div class="bts-shade"></div>
+          <div class="bts-slide-content">
+            <span class="bts-number">05 / COLLABORATION</span>
+            <h3>Partnerships for<br>Progress</h3>
+            <p>Bringing community groups, institutions, creatives and businesses together around practical shared goals.</p>
+          </div>
+        </article>
+
+        <!-- 06: POSSIBILITY -->
+        <article class="bts-slide">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=85"
+               alt="Young people building connections together">
+          <div class="bts-shade"></div>
+          <div class="bts-slide-content">
+            <span class="bts-number">06 / POSSIBILITY</span>
+            <h3>Recognising Human<br>Potential</h3>
+            <p>Making space for talent, creativity, knowledge and leadership to be recognised and put into action.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Carousel controls -->
+      <div class="bts-controls">
+        <div class="bts-progress">
+          <span class="bts-current">01</span>
+          <div class="bts-progress-line">
+            <span class="bts-progress-fill"></span>
+          </div>
+          <span class="bts-total">06</span>
+        </div>
+
+        <div class="bts-arrows">
+          <button class="bts-prev" aria-label="Previous slide">&#8592;</button>
+          <button class="bts-next" aria-label="Next slide">&#8594;</button>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
-
 <section class="feature" id="stories">
   <div class="container feature-layout">
     <div class="feature-image reveal">
-      <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=85" alt="Young adults sharing ideas in a group discussion">
+      <img src="images/dialogue.jpg" alt="Young adults sharing ideas in a group discussion">
     </div>
     <div class="feature-copy reveal">
       <div class="kicker">Our approach</div>
@@ -219,21 +593,23 @@ footer{background:#041c1a;color:white;padding:72px 0 24px}
   </div>
 </section>
 
+```html
 <section class="join" id="join">
   <div class="container reveal">
-    <div class="kicker">A shared movement</div>
-    <h2>There is a place for you in <span>what comes next.</span></h2>
-    <p>Bring your experience, skills, ideas or organisation. Together, we can grow a movement shaped by dignity, participation and possibility.</p>
-    <a class="btn btn-gold" href="mailto:hello@beyondthestreets.org">Start a conversation ↗</a>
+    <div class="kicker">Be part of the change</div>
+    <h2>Different strengths. <span>One shared purpose.</span></h2>
+    <p>Your perspective matters. Your presence can make a difference. Whether you’re ready to collaborate, support the work or help drive change, there’s a place for you in shaping what comes next.</p>
+    <a class="btn btn-gold" href="mailto:hello@beyondthestreets.org">Get involved ↗</a>
   </div>
 </section>
+```
 </main>
 
 <footer id="contact">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-about">
-        <a class="brand" href="#home"><img src="beyond-the-streets-logo.png" alt=""><span>BEYOND <span>THE STREETS</span></span></a>
+        <a class="brand" href="#home"><img src="images/Beyondthestreets.png" alt=""><span>BEYOND <span>THE STREETS</span></span></a>
         <p>A movement advancing human dignity, community connection and opportunity — shaped by the voices and leadership of people with lived experience.</p>
       </div>
       <div class="footer-col"><h4>Explore</h4><a href="#about">Our Story</a><a href="#focus">What We Do</a><a href="#stories">Our Approach</a></div>
@@ -244,27 +620,123 @@ footer{background:#041c1a;color:white;padding:72px 0 24px}
 </footer>
 
 <script>
-const menu = document.getElementById('menu');
-const nav = document.getElementById('navlinks');
-menu.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  menu.setAttribute('aria-expanded', String(open));
-  menu.textContent = open ? '×' : '☰';
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile navigation
+  const menu = document.getElementById('menu');
+  const nav = document.getElementById('navlinks');
+
+  if (menu && nav) {
+    menu.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(isOpen));
+      menu.textContent = isOpen ? '×' : '☰';
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menu.setAttribute('aria-expanded', 'false');
+        menu.textContent = '☰';
+      });
+    });
+  }
+
+  // Footer year
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Scroll reveal
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(item => observer.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add('in'));
+  }
+
+  // Focus-area carousel
+  const root = document.querySelector('#focus.bts-focus');
+  if (!root || root.dataset.initialized === 'true') return;
+  root.dataset.initialized = 'true';
+
+  const slides = [...root.querySelectorAll('.bts-slide')];
+  const previous = root.querySelector('.bts-prev');
+  const next = root.querySelector('.bts-next');
+  const current = root.querySelector('.bts-current');
+  const fill = root.querySelector('.bts-progress-fill');
+  const carousel = root.querySelector('.bts-carousel');
+
+  if (!slides.length || !previous || !next || !current || !fill || !carousel) return;
+
+  let index = 0;
+  let timer;
+  const duration = 7000;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function showSlide(newIndex) {
+    index = (newIndex + slides.length) % slides.length;
+
+    slides.forEach((slide, i) => {
+      const active = i === index;
+      slide.classList.toggle('active', active);
+      slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+
+    current.textContent = String(index + 1).padStart(2, '0');
+    fill.style.width = ((index + 1) / slides.length * 100) + '%';
+  }
+
+  function stopAutoplay() {
+    window.clearInterval(timer);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    if (reduceMotion.matches) return;
+    timer = window.setInterval(() => showSlide(index + 1), duration);
+  }
+
+  next.addEventListener('click', () => {
+    showSlide(index + 1);
+    startAutoplay();
+  });
+
+  previous.addEventListener('click', () => {
+    showSlide(index - 1);
+    startAutoplay();
+  });
+
+  carousel.addEventListener('mouseenter', stopAutoplay);
+  carousel.addEventListener('mouseleave', startAutoplay);
+  carousel.addEventListener('focusin', stopAutoplay);
+  carousel.addEventListener('focusout', startAutoplay);
+
+  let touchStart = 0;
+  carousel.addEventListener('touchstart', event => {
+    touchStart = event.changedTouches[0].clientX;
+    stopAutoplay();
+  }, { passive: true });
+
+  carousel.addEventListener('touchend', event => {
+    const distance = event.changedTouches[0].clientX - touchStart;
+    if (Math.abs(distance) > 50) {
+      showSlide(index + (distance < 0 ? 1 : -1));
+    }
+    startAutoplay();
+  }, { passive: true });
+
+  showSlide(0);
+  startAutoplay();
 });
-nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  nav.classList.remove('open');
-  menu.setAttribute('aria-expanded','false');
-  menu.textContent = '☰';
-}));
-document.getElementById('year').textContent = new Date().getFullYear();
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); }
-  }), {threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-} else {
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-}
 </script>
+
 </body>
 </html>
